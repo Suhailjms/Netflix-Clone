@@ -1,0 +1,44 @@
+.row__posters{
+    overflow-y:scroll; /* it will hidden the scroll */
+    overflow-x: scroll; /* it will give the scroll*/
+    padding:20px; /* it will give the spacing */
+    display:flex; /* a zoom out effect it will make the content to look row wise */
+}
+
+/* webkit will tell the browser which will hide the scroll bar and keeps its functionality  */
+/* .row__posters::-webkit-scrollbar{
+    display: none;;
+} */
+.row_poster{
+    /* it will keep the aspect ratio same inspite of how you move */
+    object-fit: contain; 
+    width:100%;
+    max-height: 100px;
+    margin-right: 10px;
+    transition: transform 450ms; /*ever change any changes it will take 450ms*/
+
+}
+
+.row_poster:hover {
+    transform: scale(1.08);
+}
+
+.row__posterLarge{
+    max-height: 250px; 
+}
+.row__posterLarger:hover{
+    transform: scale(1.09);
+} 
+
+.row{
+    color: rgb(254, 254, 254);
+    margin-left: 20px;
+}
+
+.created-by {
+    margin-top: 20px; /* Adjust the margin as needed */
+    color: #999; /* Text color */
+    font-size: 14px; /* Font size */
+    text-align: center; /* Center the text */
+  }
+  

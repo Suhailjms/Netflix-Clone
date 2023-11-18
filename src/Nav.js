@@ -1,0 +1,36 @@
+import React,{useState,useEffect} from 'react'
+import './Nav.css'
+
+function Nav() {
+    const [show, handleShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        handleShow(true);
+      } else {
+        handleShow(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <div className={`nav ${show && 'nav_black'}`}>
+        <img className='nav_logo'
+           src = "https://upload.wikimedia.org/wikipedia/commons/f/ff/Netflix-new-icon.png"
+           alt='Netflix Logo'/>
+        <img className='nav_avatar'
+           src = "https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+           alt='Netflix Avatar'/>
+    </div>
+  )
+}
+
+export default Nav
